@@ -10,6 +10,7 @@
     "@remotion/google-fonts": "^4.0.278",
     "@remotion/tailwind-v4": "4.0.278",
     "@remotion/zod-types": "4.0.278",
+    "basic-ftp": "^5.0.5",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "4.0.278",

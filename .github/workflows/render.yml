@@ -21,13 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: actions/setup-node@main
-      - run: npm i
+      - uses: oven-sh/setup-bun@v2
+      - run: bun i
       - run: echo $WORKFLOW_INPUT > input-props.json
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
-      - run: npx remotion render TikTok out/video.mp4 --props="./input-props.json"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: out.mp4
-          path: out/video.mp4
+      - run: bunx remotion render TikTok out/video.mp4 --props="./input-props.json"
+      - run: bun upload.ts
