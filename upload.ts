@@ -6,6 +6,8 @@ async function uploadFile() {
     const client = new ftp.Client();
     client.ftp.verbose = true; // Enable logging for debugging
 
+    console.log(process.env);
+
     try {
         await client.access({
             host: process.env.FTP_HOST, // FTP server from GitHub Actions variable
