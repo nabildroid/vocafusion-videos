@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: oven-sh/setup-bun@v2
-      - run: echo $TEST_SECRET
+      - run: echo ${{ vars.TESTTEST }}
         env:
           TEST_SECRET: ${{ vars.TESTTEST }}
       - run: bun i
