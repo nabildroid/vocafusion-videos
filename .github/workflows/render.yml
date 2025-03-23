@@ -21,15 +21,16 @@ jobs:
     name: Render video
     runs-on: ubuntu-latest
     env:
-      FTP_HOST: ${{ vars.FTP_HOST }}
-      FTP_USER: ${{ secrets.FTP_USER }}
+      UPLOADTHING: ${{ secrets.UPLOADTHING }}
+      TEST_SECRET: ${{ secrets.TEST }}
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
       - uses: actions/checkout@main
       - uses: oven-sh/setup-bun@v2
+      - run: echo $TEST_SECRET
       - run: bun i
       - run: echo $WORKFLOW_INPUT > input-props.json
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
       - run: bunx remotion render TikTok out/video.mp4 --props="./input-props.json"
-      - run: bun upload.ts
+      - run: bun upload.js
