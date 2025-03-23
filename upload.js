@@ -5,12 +5,12 @@ import fs from "fs/promises";
 
 // file
 
-const file = await fs.readFile("out/TikTok.mp4");
+const file = await fs.readFile("out/video.mp4");
 
 
 async function main() {
     const uploadingLinks = await initiateUpload({
-        name: "TikTok.mp4",
+        name: "vide.mp4",
         size: file.byteLength,
         type: "video/mp4",
     })
