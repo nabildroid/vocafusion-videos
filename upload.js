@@ -19,13 +19,13 @@ async function main() {
     console.log(uploadingLinks)
 
     await uploadFile(file, uploadingLinks);
-
+    console.log("File uploaded successfully");
+    console.log("going to trigger zapier")
     await triggerZappier(
         `https://3so1tl7kko.ufs.sh/f/${uploadingLinks.key}`,
         title,
     );
 
-    console.log("File uploaded successfully");
     process.exit(0);
 }
 
@@ -33,9 +33,16 @@ main();
 
 
 async function triggerZappier(link, title) {
-    const options = {
-        method: "POST",
-        url: "https://untitled-zap-interface-ea2293.zapier.app/api/trpc/formSubmissions.create",
+    const abortController = new AbortController();
+
+    const url = "https://untitled-zap-interface-ea2293.zapier.app/api/trpc/formSubmissions.create";
+    await axios.post(url, {
+        formId: "cm8lkticc00018uyzov6f2wt7",
+        form: {
+            "cm8lku7sw00012v6teybv5bqs": link,
+            "cm8lkx09u00022v6tprh4hmd6": title,
+        },
+    }, {
         headers: {
             "Content-Type": "application/json",
             "origin": "https://untitled-zap-interface-ea2293.zapier.app",
@@ -45,16 +52,9 @@ async function triggerZappier(link, title) {
             "x-interfaces-page-id": "cm8lkticc00018uyzov6f2wt7",
             "x-interfaces-session": "3ac08b25-8c41-41d4-8040-1111fd1faa69",
         },
-        data: JSON.stringify({
-            formId: "cm8lkue3w000j6nxu3m6llo4j",
-            values: {
-                cm8lku7sw00012v6teybv5bqs: link,
-                cm8lkx09u00022v6tprh4hmd6: title,
-            }
-        })
-    };
+        signal: abortController.signal,
+    });
 
-    await axios.request(options);
     return;
 }
 
