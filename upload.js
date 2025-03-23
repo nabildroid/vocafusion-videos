@@ -35,22 +35,25 @@ main();
 async function triggerZappier(link, title) {
     const abortController = new AbortController();
 
-    const url = "https://untitled-zap-interface-ea2293.zapier.app/api/trpc/formSubmissions.create";
+
+    const url = "https://voca.zapier.app/api/trpc/formSubmissions.create";
     await axios.post(url, {
-        formId: "cm8lkticc00018uyzov6f2wt7",
+        formId: "cm8lkue3w000j6nxu3m6llo4j",
         form: {
             "cm8lku7sw00012v6teybv5bqs": link,
             "cm8lkx09u00022v6tprh4hmd6": title,
         },
     }, {
         headers: {
-            "Content-Type": "application/json",
-            "origin": "https://untitled-zap-interface-ea2293.zapier.app",
-            "referer": "https://untitled-zap-interface-ea2293.zapier.app/tiktok",
-            "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "x-dd-rum-session-id": "fd325ee1-4a63-4f62-b2f5-f7f1196e2a04",
-            "x-interfaces-page-id": "cm8lkticc00018uyzov6f2wt7",
-            "x-interfaces-session": "3ac08b25-8c41-41d4-8040-1111fd1faa69",
+            'accept': '*/*',
+            'accept-language': 'en-US,en;q=0.9',
+            'content-type': 'application/json',
+            'origin': 'https://voca.zapier.app',
+            'referer': 'https://voca.zapier.app/',
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+            'x-dd-rum-session-id': '83df35ba-1d2e-48cc-9748-3300c55cc111',
+            'x-interfaces-page-id': 'cm8lkticc00018uyzov6f2wt7',
+            'x-interfaces-session': '22f3929e-97bf-4b6f-bb9e-397c75b42311'
         },
         signal: abortController.signal,
     });
