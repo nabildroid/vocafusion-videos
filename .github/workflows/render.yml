@@ -27,7 +27,6 @@ jobs:
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
       - run: bunx remotion render TikTok out/video.mp4 --props="./input-props.json"
-      - uses: actions/setup-node
       - run: node upload.js
         env:
           UPLOADTHING: ${{ secrets.UPLOADTHING }}
