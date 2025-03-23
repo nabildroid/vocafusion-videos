@@ -2,6 +2,10 @@ name: Render video
 on:
   workflow_dispatch:
     inputs:
+      videoTitle:
+        description: "the published video Title"
+        required: true
+        default: "Awesome Video"
       title:
         description: "What should the title be?"
         required: true
@@ -30,3 +34,4 @@ jobs:
       - run: node upload.js
         env:
           UPLOADTHING: ${{ secrets.UPLOADTHING }}
+          VIDEO_TITLE: ${{ inputs.videoTitle }}
