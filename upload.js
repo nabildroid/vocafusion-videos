@@ -21,10 +21,13 @@ async function main() {
     await uploadFile(file, uploadingLinks);
     console.log("File uploaded successfully");
     console.log("going to trigger zapier")
-    await triggerZappier(
-        `https://3so1tl7kko.ufs.sh/f/${uploadingLinks.key}`,
-        title,
-    );
+
+    if (process.env.NO_PUBLISH !== "true") {
+        await triggerZappier(
+            `https://3so1tl7kko.ufs.sh/f/${uploadingLinks.key}`,
+            title,
+        );
+    }
 
     process.exit(0);
 }
