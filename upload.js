@@ -70,7 +70,6 @@ async function initiateUpload(file) {
         data: JSON.stringify({
             fileName: file.name,
             fileSize: file.size,
-            slug: "github-action",
             fileType: 'video/mp4',
             contentDisposition: 'inline',
             acl: 'public-read',
