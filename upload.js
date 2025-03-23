@@ -39,7 +39,7 @@ async function triggerZappier(link, title) {
     const url = "https://voca.zapier.app/api/trpc/formSubmissions.create";
     await axios.post(url, {
         formId: "cm8lkue3w000j6nxu3m6llo4j",
-        form: {
+        values: {
             "cm8lku7sw00012v6teybv5bqs": link,
             "cm8lkx09u00022v6tprh4hmd6": title,
         },
