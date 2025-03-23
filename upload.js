@@ -5,14 +5,14 @@ import fs from "fs/promises";
 
 // file
 
-const file = await fs.readFile("./public/improve.mp3");
+const file = await fs.readFile("out/TikTok.mp4");
 
 
 async function main() {
     const uploadingLinks = await initiateUpload({
-        name: "improve.mp3",
+        name: "TikTok.mp4",
         size: file.byteLength,
-        type: "audio/mp3",
+        type: "video/mp4",
     })
 
     console.log(uploadingLinks)
@@ -37,7 +37,7 @@ async function initiateUpload(file) {
         data: JSON.stringify({
             fileName: file.name,
             fileSize: file.size,
-            fileType: 'audio/mp3',
+            fileType: 'video/mp4',
             contentDisposition: 'inline',
             acl: 'public-read',
             expiresIn: 3600
