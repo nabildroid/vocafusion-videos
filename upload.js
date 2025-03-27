@@ -39,9 +39,8 @@ async function triggerZappier(link, title) {
     const abortController = new AbortController();
 
 
-    const url = "https://voca.zapier.app/api/trpc/formSubmissions.create";
+    const url = "https://voca.zapier.app/api/proxy/interfaces/api/interfaces/v0/blocks/form/cm8lkue3w000j6nxu3m6llo4j/submissions";
     await axios.post(url, {
-        formId: "cm8lkue3w000j6nxu3m6llo4j",
         values: {
             "cm8lku7sw00012v6teybv5bqs": link,
             "cm8lkx09u00022v6tprh4hmd6": title,
@@ -52,7 +51,7 @@ async function triggerZappier(link, title) {
             'accept-language': 'en-US,en;q=0.9',
             'content-type': 'application/json',
             'origin': 'https://voca.zapier.app',
-            'referer': 'https://voca.zapier.app/',
+            'referer': 'https://voca.zapier.app/tiktok',
             'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
             'x-dd-rum-session-id': '83df35ba-1d2e-48cc-9748-3300c55cc111',
             'x-interfaces-page-id': 'cm8lkticc00018uyzov6f2wt7',
