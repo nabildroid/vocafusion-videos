@@ -9,23 +9,30 @@
     "@remotion/cli": "4.0.278",
     "@remotion/google-fonts": "^4.0.278",
     "@remotion/tailwind-v4": "4.0.278",
+    "@remotion/three": "^4.0.286",
     "@remotion/zod-types": "4.0.278",
     "axios": "^1.8.4",
     "basic-ftp": "^5.0.5",
+    "glsl-shader-loader": "^0.1.6",
+    "glslify": "^7.1.1",
+    "glslify-import-loader": "^0.1.2",
+    "raw-loader": "^4.0.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "4.0.278",
     "tailwindcss": "4.0.0",
+    "three": "^0.175.0",
     "zod": "3.22.3"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.278",
+    "@types/bun": "latest",
     "@types/react": "19.0.0",
+    "@types/three": "^0.175.0",
     "@types/web": "0.0.166",
     "eslint": "9.19.0",
     "prettier": "3.3.3",
-    "typescript": "5.5.4",
-    "@types/bun": "latest"
+    "typescript": "5.5.4"
   },
   "scripts": {
     "dev": "remotionb studio",
