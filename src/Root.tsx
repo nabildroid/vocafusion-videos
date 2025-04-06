@@ -3,7 +3,7 @@ import { AbsoluteFill, Composition } from "remotion";
 import { MyComposition, SequanceSchema } from "./Composition";
 
 const fps = 30;
-const durationsInSecons = 60 + 7;
+const durationsInSecons = 35;
 export const RemotionRoot: React.FC = () => {
   return (
     <>

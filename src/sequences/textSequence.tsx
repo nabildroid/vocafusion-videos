@@ -13,7 +13,7 @@ export function TextSequence(props: { val: string }) {
         transform: `translateY(${enter * -110}%)`,
         // fontFamily: OpenSans,
       }}
-      className=" px-4 top-[70%] antialiased absolute text-balance text-center text-white text-6xl font-medium leading-relaxed"
+      className=" px-28 top-[70%] antialiased absolute text-balance text-center text-white text-6xl font-medium leading-relaxed"
     >
       {props.val.split(".").map((line, i) => (
         <>
